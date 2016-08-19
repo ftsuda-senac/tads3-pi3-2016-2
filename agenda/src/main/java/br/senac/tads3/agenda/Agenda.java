@@ -12,7 +12,7 @@ package br.senac.tads3.agenda;
 public class Agenda {
 
   public static void main(String[] args) {
-    System.out.println("Primeiro projeto PI3");
+    System.out.println("Primeiro projeto PI3 - primeira alteração");
   }
 
 }
