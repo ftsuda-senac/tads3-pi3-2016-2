@@ -14,10 +14,21 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <h1>Hello World! xpto</h1>
+        <h1>Hello World!</h1>
+        <c:forEach items="${listaPessoas}" var="p">
+            <div>
+                <p><c:out value="${p.nome}" /></p>
+                <p><c:out value="${p.email}" /></p>
+                <c:choose>
+                    <c:when test="${p.sexo == 1}">
+                        <p>Masculino</p>
+                    </c:when>
+                    <c:otherwise>
+                        <p>Feminino</p>
+                    </c:otherwise>
+                </c:choose>
+            </div>
+        </c:forEach>
 
-        <p><c:out value="${xpto1.nome}" /></p>
-        <p><c:out value="${xpto1.email}" /></p>
-          
     </body>
 </html>

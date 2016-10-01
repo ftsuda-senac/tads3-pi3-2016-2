@@ -14,13 +14,16 @@ public class Pessoa {
   private String nome;
   
   private String email;
+  
+  private int sexo; // 0-Fem 1-Masc
 
   public Pessoa() {
   }
 
-  public Pessoa(String nome, String email) {
+  public Pessoa(String nome, String email, int sexo) {
     this.nome = nome;
     this.email = email;
+    this.sexo = sexo;
   }
 
   public String getNome() {
@@ -37,6 +40,14 @@ public class Pessoa {
 
   public void setEmail(String email) {
     this.email = email;
+  }
+
+  public int getSexo() {
+    return sexo;
+  }
+
+  public void setSexo(int sexo) {
+    this.sexo = sexo;
   }
   
 }
