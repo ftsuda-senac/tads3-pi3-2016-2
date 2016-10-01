@@ -7,6 +7,7 @@ package br.senac.tads3.testeweb;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -63,7 +64,19 @@ public class TesteServlet extends HttpServlet {
   @Override
   protected void doGet(HttpServletRequest request, HttpServletResponse response)
 	  throws ServletException, IOException {
-    processRequest(request, response);
+    
+    Pessoa p1 = new Pessoa("Fulano da Silva", "fulano@zmail.com");
+    Pessoa p2 = new Pessoa("Ciclano de Souza", "ciclano@zmail.com");
+    
+    // Configura os objetos p1 e p2 como atributos da requisição para
+    // repassá-los ao jsp
+    request.setAttribute("xpto1", p1);
+    request.setAttribute("xpto2", p2);
+    
+    // Encaminhamento para o processamento continuar no jsp.
+    RequestDispatcher dispatcher =
+	    request.getRequestDispatcher("teste.jsp");
+    dispatcher.forward(request, response);
   }
 
   /**

@@ -6,6 +6,7 @@
 
 <%@page import="br.senac.tads3.testeweb.Pessoa"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
     <head>
@@ -13,14 +14,10 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <h1>Hello World!</h1>
-        <%
-        Pessoa p1 = new Pessoa("Fulano da Silva", "fulano@zmail.com");
-        Pessoa p2 = new Pessoa("Ciclano de Souza", "ciclano@zmail.com");
-        %>
-        
-        <p><%=p1.getNome()%></p>
-        <p><%=p1.getEmail()%></p>
+        <h1>Hello World! xpto</h1>
+
+        <p><c:out value="${xpto1.nome}" /></p>
+        <p><c:out value="${xpto1.email}" /></p>
           
     </body>
 </html>
