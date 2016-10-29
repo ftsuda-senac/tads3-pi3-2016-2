@@ -7,6 +7,7 @@
 <%@page import="br.senac.tads3.testeweb.Pessoa"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <!DOCTYPE html>
 <html>
     <head>
@@ -15,6 +16,11 @@
     </head>
     <body>
         <h1>Hello World!</h1>
+	
+	<h2><c:out value="${sessionScope.usuario.nome}" /></h2>
+	
+	
+	<c:import url="menu.jsp" />
         <c:forEach items="${listaPessoas}" var="p">
             <div>
                 <p><c:out value="${p.nome}" /></p>

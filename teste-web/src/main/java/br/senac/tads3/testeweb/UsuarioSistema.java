@@ -133,7 +133,8 @@ public class UsuarioSistema {
   public boolean autenticar(String nome, String senha) {
     if (this.nome != null) {
       try {
-        return this.nome.equals(nome) && Arrays.equals(this.hashSenha, gerarHashSenhaPBKDF2(senha));
+        return this.nome.equals(nome) && 
+		Arrays.equals(this.hashSenha, gerarHashSenhaPBKDF2(senha));
       } catch (NoSuchAlgorithmException | InvalidKeySpecException ex) {
         Logger.getLogger(UsuarioSistema.class.getName()).log(Level.SEVERE, null, ex);
       }
